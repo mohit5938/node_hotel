@@ -14,7 +14,7 @@ const mongoURL = process.env.DB_URL;
 //         console.log("connection  failed" ,error);
 //     }
 // }
-mongoose.connect(mongoURL); 
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true }); 
 const db = mongoose.connection;
 
 //event listneer in mongoose 
