@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-
-const mongoURL = 'mongodb+srv://ms98357mohit:mohit123@cluster0.jd1i4.mongodb.net/?retryWrites=true&w=majority';
+require('dotenv').config();
+const mongoURL = process.env.DB_URL;
 
 // const connectDb = async ()=>{
 
@@ -14,7 +14,7 @@ const mongoURL = 'mongodb+srv://ms98357mohit:mohit123@cluster0.jd1i4.mongodb.net
 //         console.log("connection  failed" ,error);
 //     }
 // }
-mongoose.connect(mongoURL);
+mongoose.connect(mongoURL); 
 const db = mongoose.connection;
 
 //event listneer in mongoose 
